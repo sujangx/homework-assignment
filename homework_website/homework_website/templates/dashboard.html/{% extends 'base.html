@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ current_user.username }}</h2>
+<h4>Your Assignments</h4>
+<ul class="list-group">
+    {% for a in assignments %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ a.title }} — Due: {{ a.deadline.strftime('%Y-%m-%d %H:%M') }}
+        <span>
+            Status: {{ statuses.get(a.id, 'pending') }}
+            <a href="{{ url_for('update_status', assignment_id=a.id, status='done') }}" class="btn btn-sm btn-success">Done</a>
+            <a href="{{ url_for('update_status', assignment_id=a.id, status='pending') }}" class="btn btn-sm btn-warning">Pending</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
