@@ -1,0 +1,19 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.card, .form-control, .btn {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #fff;
+}
+
+a, .btn-link {
+    color: #90caf9;
+}
+
+.navbar {
+    background-color: #212121;
+}
